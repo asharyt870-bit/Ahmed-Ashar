@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div class="app">
+  <aside class="sidebar">
+    <div class="brand"><span>◆</span> ASHAR <b>PRO</b></div>
+    <p class="menu-label">WORKSPACE</p>
+    <button class="nav active" data-page="dashboard">▦ Dashboard</button>
+    <button class="nav" data-page="social">◉ Social Media</button>
+    <button class="nav" data-page="captions">✦ AI Caption Studio</button>
+    <button class="nav" data-page="seo">⌕ SEO Analyzer</button>
+    <button class="nav" data-page="planner">▤ Content Planner</button>
+    <button class="nav" data-page="campaigns">◈ Campaign Manager</button>
+    <div class="sidebar-bottom">
+      <span class="online-dot"></span> All systems ready
+      <small>ASHAR MARKETING PRO v1.0</small>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">YOUR DIGITAL WORKSPACE</span>
+        <h2 id="pageTitle">Dashboard</h2>
+      </div>
+      <div class="top-right"><span class="status">● ONLINE</span><div class="avatar">A</div></div>
+    </header>
+
+    <section class="page active" id="dashboard">
+      <div class="welcome">
+        <div><span class="eyebrow">WELCOME TO YOUR WORKSPACE</span>
+          <h1>Grow your brand.<br><span>Smarter with AI.</span></h1>
+          <p>Your all-in-one digital marketing workspace.</p>
+          <button class="primary" data-go="captions">Create AI Caption ↗</button>
+        </div>
+        <div class="welcome-icon">✦</div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>Total Ideas Saved</span><strong id="ideaCount">0</strong><small>Content ideas</small></div>
+        <div class="stat"><span>Planned Posts</span><strong id="postCount">0</strong><small>In your planner</small></div>
+        <div class="stat"><span>Campaigns</span><strong id="campaignCount">0</strong><small>Created campaigns</small></div>
+        <div class="stat"><span>Marketing Tools</span><strong>05</strong><small>Ready to use</small></div>
+      </div>
+      <div class="section-heading"><div><span class="eyebrow">QUICK ACCESS</span><h3>Marketing tools</h3></div></div>
+      <div class="tool-grid">
+        <button class="tool-card" data-go="captions"><span>✦</span><h3>AI Caption Studio</h3><p>Generate captions and hashtags.</p></button>
+        <button class="tool-card" data-go="seo"><span>⌕</span><h3>SEO Analyzer</h3><p>Analyze keywords and content.</p></button>
+        <button class="tool-card" data-go="planner"><span>▤</span><h3>Content Planner</h3><p>Organize your upcoming posts.</p></button>
+        <button class="tool-card" data-go="campaigns"><span>◈</span><h3>Campaign Manager</h3><p>Manage marketing campaigns.</p></button>
+      </div>
+    </section>
+
+    <section class="page" id="social">
+      <div class="section-heading"><div><span class="eyebrow">SOCIAL WORKSPACE</span><h3>Social Media Hub</h3></div></div>
+      <div class="panel">
+        <h3>Social media platforms</h3>
+        <p class="muted">Plan your content for these popular platforms.</p>
+        <div class="platforms">
+          <div>◎ <b>Instagram</b><small>Posts, reels & stories</small></div>
+          <div>f <b>Facebook</b><small>Pages & promotions</small></div>
+          <div>♪ <b>TikTok</b><small>Short-form videos</small></div>
+          <div>in <b>LinkedIn</b><small>Professional content</small></div>
+          <div>▶ <b>YouTube</b><small>Videos & shorts</small></div>
+        </div>
+        <p class="muted">Note: This workspace helps you plan content. It does not automatically publish to social accounts.</p>
+      </div>
+    </section>
+
+    <section class="page" id="captions">
+      <div class="section-heading"><div><span class="eyebrow">AI CONTENT ASSISTANT</span><h3>Caption Studio</h3></div></div>
+      <div class="panel">
+        <label>What is your post about?</label>
+        <textarea id="captionTopic" placeholder="Example: New summer clothing collection..."></textarea>
+        <div class="form-row">
+          <div><label>Platform</label><select id="captionPlatform"><option>Instagram</option><option>Facebook</option><option>LinkedIn</option><option>TikTok</option></select></div>
+          <div><label>Tone</label><select id="captionTone"><option>Professional</option><option>Creative</option><option>Funny</option><option>Friendly</option><option>Luxury</option></select></div>
+        </div>
+        <button class="primary" id="generateCaption">✦ Generate Caption</button>
+        <div class="result" id="captionResult">
+          <div class="result-head"><b>Generated content</b><button class="copy" id="copyCaption">Copy</button></div>
+          <div id="captionOutput" class="output">Your generated caption will appear here.</div>
+          <button class="secondary" id="saveCaption">＋ Save Idea</button>
+        </div>
+        <p class="muted">Caption generation uses built-in templates. For live AI-generated results, an AI API connection is required.</p>
+      </div>
+    </section>
+
+    <section class="page" id="seo">
+      <div class="section-heading"><div><span class="eyebrow">SEARCH OPTIMIZATION</span><h3>SEO Analyzer</h3></div></div>
+      <div class="panel">
+        <label>Enter your content or website description</label>
+        <textarea id="seoContent" placeholder="Paste your website text or article here..."></textarea>
+        <label>Target keyword</label>
+        <input id="seoKeyword" placeholder="Example: digital marketing">
+        <button class="primary" id="analyzeSeo">Analyze Content</button>
+        <div class="result" id="seoResult"><div id="seoOutput" class="output">Your SEO analysis will appear here.</div></div>
+        <p class="muted">This is a basic text-based SEO check, not a live Google ranking report.</p>
+      </div>
+    </section>
+
+    <section class="page" id="planner">
+      <div class="section-heading"><div><span class="eyebrow">CONTENT ORGANIZATION</span><h3>Content Planner</h3></div></div>
+      <div class="panel">
+        <label>Post title or idea</label><input id="postTitle" placeholder="Enter post title">
+        <div class="form-row">
+          <div><label>Platform</label><select id="postPlatform"><option>Instagram</option><option>Facebook</option><option>TikTok</option><option>LinkedIn</option><option>YouTube</option></select></div>
+          <div><label>Publish date</label><input type="date" id="postDate"></div>
+        </div>
+        <button class="primary" id="addPost">＋ Add to Planner</button>
+      </div>
+      <div class="panel"><h3>Your planned posts</h3><div id="postList" class="saved-list">No posts added yet.</div></div>
+    </section>
+
+    <section class="page" id="campaigns">
+      <div class="section-heading"><div><span class="eyebrow">MARKETING MANAGEMENT</span><h3>Campaign Manager</h3></div></div>
+      <div class="panel">
+        <label>Campaign name</label><input id="campaignName" placeholder="Example: Summer Sale 2026">
+        <div class="form-row">
+          <div><label>Platform</label><select id="campaignPlatform"><option>Instagram</option><option>Facebook</option><option>Google Ads</option><option>TikTok</option><option>LinkedIn</option></select></div>
+          <div><label>Budget (PKR)</label><input type="number" id="campaignBudget" placeholder="5000" min="0"></div>
+        </div>
+        <button class="primary" id="addCampaign">＋ Create Campaign</button>
+      </div>
+      <div class="panel"><h3>Your campaigns</h3><div id="campaignList" class="saved-list">No campaigns created yet.</div></div>
+    </section>
+    <footer>ASHAR MARKETING PRO <span>•</span> Built for smarter digital growth</footer>
+  </main>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
